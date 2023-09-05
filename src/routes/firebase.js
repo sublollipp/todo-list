@@ -4,22 +4,25 @@ import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, signO
 import { getFirestore, setDoc, doc, getDoc, addDoc } from "firebase/firestore";
 import { goto } from "$app/navigation";
 import { userIn, currentId, items } from "./stores";
+import { PUBLIC_APIKEY, PUBLIC_AUTHDOMAIN, PUBLIC_PROJECTID, PUBLIC_STORAGEBUCKET, PUBLIC_MESSAGINGSENDERID, PUBLIC_APPID } from "$env/static/public"
 
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyCTqirNNy73P3eYHXxpgyttY5GUh_SBmLw",
-  authDomain: "todolist-b1587.firebaseapp.com",
-  projectId: "todolist-b1587",
-  storageBucket: "todolist-b1587.appspot.com",
-  messagingSenderId: "99524095391",
-  appId: "1:99524095391:web:83c3411330bb4f1731e1aa"
-};
 
 // Initialize Firebase
+
+export const firebaseConfig = {
+    apiKey: PUBLIC_APIKEY,
+    authDomain: PUBLIC_AUTHDOMAIN,
+    projectId: PUBLIC_PROJECTID,
+    storageBucket: PUBLIC_STORAGEBUCKET,
+    messagingSenderId: PUBLIC_MESSAGINGSENDERID,
+    appId: PUBLIC_APPID
+  };
+
 const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);
