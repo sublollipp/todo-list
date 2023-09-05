@@ -1,38 +1,23 @@
-# create-svelte
+# Duirky's Todo-liste - DA
+[Denne todo-liste](https://todo-list-smoky-psi.vercel.app/) er lavet af mig, Duirky, fordi jeg gerne vil lære om Svelte. Todo-listen er primært lavet i Svelte, men en del Javascript indgår i Firebase-kommunikationen
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Login-metoder
+Jeg bruger firebase auth til login. Man kan logge ind med email og password, Gmail eller Github
 
-## Creating a project
+## Features
+Man kan oprette og slette noter og markere dem som fuldendte. Det hele gemmes for din bruger i firebase firestore
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Behind the scenes
+Todos opbevares som objekter i en liste. Denne liste er en Svelte store. De slettes vha. deres ID, som genereres meget simpelt. Hver gang man laver en note, får det et id, og currentId variablen øges med 1, så id'et viser, hvor mange noter, man har lavet. For et kæde det sammen med firebase, bliver det sat sammen i et enkelt objekt, som bliver opdateret, hver gang items stores bliver opdateres. Objektet indeholder id, som er en int, og items, som er en liste af objekter. Databasen bliver loadet ned i storen, når man logger ind, enten manuelt eller ved autologin. Autologin styres af firebases egen ting
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+# Duirky's Todo-list - EN
+[This todo-list](https://todo-list-smoky-psi.vercel.app/) is made by me, Duirky, because i wanted to learn about Svelte. The todo-list is primarily made in Svelte, but quite a bit of Javascript is involved in communicating with Firebase.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## Login-methods
+I use firebase auth for login. You can log in with email and password, Gmail, or Github.
 
-## Developing
+## Features
+You can create and delete notes and mark them as completed. It's all saved for your user in firebase firestore.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Behind the scenes
+Todos are stored as objects in a list. This list is a Svelte store. They're deleted by refering to their ID, which is generated in a quite simple way. Every time you make a note, that note is assigned an ID, and the currentId variable is increased by one. As such, the of a todo shows how many notes you have created before that one. To hook it up to firebase, it's put together to a single object containing the currentID (an integer) and the todos (a list of objects). The database is updated via a subscribe method of the items list. The database is loaded into the store upon login, whether it be automatic or manual. Automatic login is controlled by firebase.
