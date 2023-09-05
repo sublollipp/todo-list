@@ -1,10 +1,13 @@
 <script>
     import { items, localItems } from "../stores";
-    /**if (Array.isArray($items)) {
-        var itemsLength = $items.length;
-        var completedItems = $items.filter((e)=>e.completed).length;
+    var itemsLength = null;
+    var completedItems = null;
+    
+    $: if (Array.isArray($items)) {
+        itemsLength = localItems.length;
+        completedItems = localItems.filter((e)=>e.completed).length;
     }
-    */
+    
     
 </script>
 
@@ -22,5 +25,7 @@
 
 <div class="container">
     <span>Min to-do liste</span>
-    <!--span>{completedItems}/{itemsLength}</span-->
+    {#if itemsLength != null}
+        <span>{completedItems}/{itemsLength}</span>
+    {/if}
 </div>
