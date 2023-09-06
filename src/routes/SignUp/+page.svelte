@@ -18,7 +18,7 @@
     }
 </script>
 
-<style>
+<style lang="postcss">
     div {
         width: 500px;
         display: flex;

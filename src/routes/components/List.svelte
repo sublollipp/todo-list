@@ -15,7 +15,7 @@
 </div>
 
 <!--CSS (PT ikke tailwind, ad)-->
-<style>
+<style lang="postcss">
     div {
         height: 500px;
     }

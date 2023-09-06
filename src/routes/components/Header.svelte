@@ -11,7 +11,7 @@
     
 </script>
 
-<style>
+<style lang="postcss">
     .container {
         color: white;
         background-color: rgba(0, 0, 0, 0.1);

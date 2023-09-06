@@ -10,7 +10,7 @@
     }
 </script>
 
-<style>
+<style lang="postcss">
     div {
         display: flex;
         justify-content: space-between;

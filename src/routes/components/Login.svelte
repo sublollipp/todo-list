@@ -11,7 +11,7 @@
 
 </script>
 
-<style>
+<style lang="postcss">
     button {
         display: inline-block;
         padding: 10px 15px;

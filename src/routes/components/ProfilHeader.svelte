@@ -5,7 +5,7 @@
     $: localUser = $userIn;
 </script>
 
-<style>
+<style lang="postcss">
     .container {
         width: 500px;
         background: rgba(0, 0, 0, 0.5);

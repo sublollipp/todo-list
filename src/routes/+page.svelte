@@ -13,7 +13,7 @@
     console.log(localUser);
 </script>
 
-<style>
+<style lang="postcss">
     .container {
         width: 500px;
         background-color: rgb(74, 51, 206);

@@ -15,7 +15,7 @@
 
 </script>
 
-<style>
+<style lang="postcss">
     .item {
         width: 480px;
         height: 40px;
@@ -52,7 +52,6 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        color: white;
     }
 
     
@@ -61,7 +60,7 @@
 <div class="item" in:fade>
     <div class="leftSide">
         <input type="checkbox" bind:checked={Item.completed} style="cursor: pointer;">
-        <span>{Item.text}</span>
+        <span class="text-red-500">{Item.text}</span>
     </div>
     <button class="deleteButton" on:click={deleteSelf}>🗑️</button>
 </div>
